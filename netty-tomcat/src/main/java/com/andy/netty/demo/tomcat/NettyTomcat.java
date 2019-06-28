@@ -27,12 +27,11 @@ import java.util.Properties;
 @Slf4j
 public class NettyTomcat {
 
-    //打开Tomcat源码，全局搜索ServerSocket
-
     private int port = 8080;
 
+    /**存放请求映射关系*/
     private Map<String, NettyServlet> servletMapping = new HashMap<>();
-
+    /**读取配置文件*/
     private Properties webxml = new Properties();
 
     private void init(){
@@ -55,7 +54,6 @@ public class NettyTomcat {
                     servletMapping.put(url, obj);
                 }
             }
-
         }catch(Exception e){
             e.printStackTrace();
         }
@@ -140,6 +138,8 @@ public class NettyTomcat {
     }
 
     public static void main(String[] args) {
+
+        //浏览器输入：http://127.0.0.1:8080/firstServlet.do
         new NettyTomcat().start();
     }
 }

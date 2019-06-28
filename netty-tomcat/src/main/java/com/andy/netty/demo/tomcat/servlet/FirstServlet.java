@@ -17,7 +17,7 @@ public class FirstServlet extends NettyServlet {
     }
 
     public void doPost(NettyRequest request, NettyResponse response) throws Exception {
-        response.write("This is First Serlvet");
+        response.write("This is First Servlet");
     }
 
 }
